@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="store">
+ <head>
+ <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <script src="/scripts/jquery.min.js"></script>
+   <script src="/bootstrap/js/bootstrap.min.js"></script>
+   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link href="bootstrap/style.css" rel="stylesheet" />
+      
+ </head>
+ <!--<body ng-controller='StoreController as store'>
+ <script type="text/javascript" src="angular.min.js"></script>
+ <script type="text/javascript" src="app.js"></script>
+ <div ng-hide='store.product[1].soldOut'>
+	<h1>{{store.product[1].name}}</h1>
+   <h2> ${{store.product[1].price}}</h2>
+	<h3>{{store.product[1].description}}</h3>
+	<button ng-show="store.product[1].canPurchase"> Add to Cart </button>
+ </div>
+ </body>-->
+ <h1 align="center" padding="2%">ABC GEM STORE</h1>
+ <body ng-controller='StoreController as store' class='container'>
+ <script type="text/javascript" src="angular.min.js"></script>
+ <script type="text/javascript" src="app.js"></script>
+ <ul class ='list-group' ng-repeat='product in store.products'>
+ <li class='list-group-item'>
+	<h2>{{product.name}}
+    
+	
+	<em class='pull-right'> {{product.price|currency}}</em>
+	<img ng-src="{{product.image}}" float="center" width="30%" height="30%"/>
+   </h2>
+   <section  ng-controller="PanelController as panel">
+   <ul class ="nav nav-pills">
+   <li class="nav-item" > <a ng-class="{ active:panel.isSelected(1)}" href ng-click="panel.selectTab(1)">Description</a> </li>
+   <li class="nav-item" > <a ng-class="{ active:panel.isSelected(2) }" href ng-click="panel.selectTab(2)">Specifications</a> </li>
+   <li class="nav-item"> <a ng-class="{ active:panel.isSelected(3) }" href ng-click="panel.selectTab(3)">Reviews</a> </li>
+
+   </ul>
+ 
+ <div class="panel" ng-show="panel.isSelected(1)">
+	<h4>Description</h4>
+ <blockquote><p>{{product.description}}</p></blockquote>
+</div>
+<div class="panel" ng-show="panel.isSelected(2)">
+ <h4>Specifications</h4>
+ <blockquote>None yet</blockquote>
+</div>
+<div class="panel" ng-show="panel.isSelected(3)">
+ <h4>Reviews</h4>
+ <blockquote>None yet</blockquote>
+</div>
+</section>
+	</li>
+ </ul>
+
+ </body>
+ 
+</html>
+
+ 
